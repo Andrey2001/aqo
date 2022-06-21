@@ -214,8 +214,8 @@ SELECT * FROM aqo_drop_class(42);
 -- Remove all data from ML knowledge base
 SELECT count(*) FROM (
 SELECT aqo_drop_class(q1.id::bigint) FROM (
-    SELECT query_hash AS id
-    FROM aqo_queries WHERE query_hash <> 0) AS q1
+    SELECT queryid AS id
+    FROM aqo_queries WHERE queryid <> 0) AS q1
 ) AS q2;
 SELECT count(*) FROM aqo_data;
 
